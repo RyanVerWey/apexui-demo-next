@@ -57,6 +57,7 @@ export function NorthstarShell({ children }: { children: ReactNode }) {
                     className={`apex-sidebar-item${route.id === activeRoute.id ? " apex-sidebar-item-active" : ""}`}
                     href={route.href}
                     key={route.id}
+                    prefetch={false}
                   >
                     <span className="apex-sidebar-icon" aria-hidden="true">
                       <Icon name={route.icon} size="sm" decorative />

@@ -98,10 +98,10 @@ export function MarketingHomePage() {
               Dispatchers, account managers, and technicians share one premium workspace for routing, SLA recovery, customer proof, and closeout.
             </Typography>
             <div className="app-actions">
-              <Link className="apex-button apex-button-primary apex-button-md" href="/dashboard">
+              <Link className="apex-button apex-button-primary apex-button-md" href="/dashboard" prefetch={false}>
                 <IconLabel icon="chartBar">Open metrics</IconLabel>
               </Link>
-              <Link className="apex-button apex-button-secondary apex-button-md" href="/work-orders">
+              <Link className="apex-button apex-button-secondary apex-button-md" href="/work-orders" prefetch={false}>
                 <IconLabel icon="clipboardList">Create work order</IconLabel>
               </Link>
             </div>
