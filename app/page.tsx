@@ -1,5 +1,5 @@
-import { ReleaseCommandCenter } from "./components/organisms/ReleaseCommandCenter";
+import { MarketingHomePage } from "./components/pages/NorthstarPages";
 
 export default function Page() {
-  return <ReleaseCommandCenter />;
+  return <MarketingHomePage />;
 }

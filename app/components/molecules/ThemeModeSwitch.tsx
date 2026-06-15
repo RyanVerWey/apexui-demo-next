@@ -1,5 +1,6 @@
 import { Badge, Switch } from "@apexui/react";
-import type { ThemeMode } from "../../data/demo";
+
+export type ThemeMode = "light" | "dark";
 
 export function ThemeModeSwitch({
   mode,

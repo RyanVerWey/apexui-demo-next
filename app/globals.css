@@ -6,15 +6,25 @@
   box-sizing: border-box;
 }
 
+html {
+  min-width: 0;
+}
+
 body {
   margin: 0;
   background: var(--apex-color-canvas);
   color: var(--apex-color-text);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
 }
 
 .app-shell {
   min-height: 100vh;
   background: var(--apex-color-canvas);
+  color: var(--apex-color-text);
 }
 
 .app-main {
@@ -33,6 +43,7 @@ body {
   gap: var(--apex-space-4);
   position: sticky;
   top: var(--apex-space-6);
+  min-width: 0;
 }
 
 .app-page {
@@ -46,6 +57,10 @@ body {
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
   gap: var(--apex-space-6);
   align-items: start;
+}
+
+.app-route-nav {
+  min-width: 0;
 }
 
 .app-grid-two {
@@ -69,6 +84,7 @@ body {
 .app-top-actions,
 .app-theme-switch,
 .app-avatar-row,
+.app-form-row,
 .app-icon-label {
   display: flex;
   flex-wrap: wrap;
@@ -84,10 +100,111 @@ body {
   gap: var(--apex-space-2);
 }
 
+.app-form {
+  display: grid;
+  gap: var(--apex-space-4);
+}
+
+.app-form-row > * {
+  flex: 1 1 220px;
+}
+
 .app-icon-label {
   display: inline-flex;
   gap: var(--apex-space-2);
   flex-wrap: nowrap;
+}
+
+.app-visual-panel {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid var(--apex-color-border);
+  border-radius: var(--apex-radius-lg);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--apex-color-border) 42%, transparent) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--apex-color-border) 42%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 22% 24%, color-mix(in srgb, var(--apex-color-accent) 22%, transparent), transparent 26%),
+    var(--apex-color-subtle);
+  background-size: 44px 44px, 44px 44px, auto, auto;
+}
+
+.app-map-line {
+  position: absolute;
+  height: 3px;
+  border-radius: var(--apex-radius-full);
+  background: var(--apex-color-accent);
+  transform-origin: left center;
+}
+
+.app-map-line-a {
+  left: 18%;
+  top: 42%;
+  width: 55%;
+  transform: rotate(18deg);
+}
+
+.app-map-line-b {
+  left: 28%;
+  top: 64%;
+  width: 48%;
+  transform: rotate(-24deg);
+}
+
+.app-map-pin {
+  position: absolute;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 2px solid var(--apex-color-surface);
+  border-radius: var(--apex-radius-full);
+  background: var(--apex-color-accent);
+  color: var(--apex-color-on-accent);
+  font-weight: var(--apex-font-weight-bold);
+  box-shadow: var(--apex-shadow-md);
+}
+
+.app-map-pin-a {
+  left: 16%;
+  top: 34%;
+}
+
+.app-map-pin-b {
+  right: 22%;
+  top: 48%;
+}
+
+.app-map-pin-c {
+  left: 34%;
+  bottom: 18%;
+}
+
+.app-visual-stat {
+  position: absolute;
+  right: var(--apex-space-5);
+  bottom: var(--apex-space-5);
+  display: grid;
+  gap: var(--apex-space-1);
+  padding: var(--apex-space-4);
+  border: 1px solid var(--apex-color-border);
+  border-radius: var(--apex-radius-md);
+  background: var(--apex-color-surface);
+  box-shadow: var(--apex-shadow-sm);
+}
+
+.app-visual-stat strong {
+  font-size: var(--apex-font-size-xl);
+  line-height: var(--apex-font-line-height-tight);
+}
+
+.app-visual-stat span {
+  color: var(--apex-color-muted);
+  font-size: var(--apex-font-size-sm);
+}
+
+.apex-button {
+  text-decoration: none;
 }
 
 @media (max-width: 1180px) {
@@ -111,6 +228,10 @@ body {
   .app-sidebar-area {
     position: static;
   }
+
+  .app-visual-panel {
+    min-height: 280px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -124,5 +245,26 @@ body {
 
   .app-top-actions {
     justify-content: flex-start;
+  }
+
+  .app-actions,
+  .app-top-actions,
+  .app-form-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .app-actions > *,
+  .app-top-actions > *,
+  .app-form-row > * {
+    width: 100%;
+  }
+
+  .app-theme-switch {
+    align-items: flex-start;
+  }
+
+  .app-visual-panel {
+    min-height: 240px;
   }
 }
