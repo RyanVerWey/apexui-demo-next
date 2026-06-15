@@ -46,6 +46,10 @@ a {
   min-width: 0;
 }
 
+.app-sidebar-area .apex-bottom-navigation {
+  display: none;
+}
+
 .app-page {
   display: grid;
   gap: var(--apex-space-6);
